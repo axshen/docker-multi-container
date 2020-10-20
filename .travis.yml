@@ -9,10 +9,10 @@ script:
     - docker run -e CI=true react-test npm test
 
 after_success:
-    - docker built -t astroaustin/multi-client ./client
-    - docker built -t astroaustin/multi-nginx ./nginx
-    - docker built -t astroaustin/multi-server ./server
-    - docker built -t astroaustin/multi-worker ./worker
+    - docker build -t astroaustin/multi-client ./client
+    - docker build -t astroaustin/multi-nginx ./nginx
+    - docker build -t astroaustin/multi-server ./server
+    - docker build -t astroaustin/multi-worker ./worker
     # Login to Docker
     - echo "DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     # Push images to docker hub
