@@ -1,0 +1,22 @@
+sudo: required
+services:
+    - docker
+
+before_install:
+    - docker build -t react-test -f ./client/Dockerfile.dev ./client
+
+script:
+    - docker run react-test npm test -- --coverage
+
+after_success:
+    - docker built -t astroaustin/multi-client ./client
+    - docker built -t astroaustin/multi-nginx ./nginx
+    - docker built -t astroaustin/multi-server ./server
+    - docker built -t astroaustin/multi-worker ./worker
+    # Login to Docker
+    - echo "DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    # Push images to docker hub
+    - docker push astroaustin/multi-client
+    - docker push astroaustin/multi-nginx
+    - docker push astroaustin/multi-server
+    - docker push astroaustin/multi-worker
