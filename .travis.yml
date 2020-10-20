@@ -6,7 +6,7 @@ before_install:
     - docker build -t react-test -f ./client/Dockerfile.dev ./client
 
 script:
-    - docker run react-test npm test -- --coverage
+    - docker run -e CI=true react-test npm test
 
 after_success:
     - docker built -t astroaustin/multi-client ./client
