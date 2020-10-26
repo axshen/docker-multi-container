@@ -4,6 +4,7 @@ Code for a quick deployment of a basic web application using Kubernetes. Uses Di
 
 Also contains a docker-compose file for running locally.
 
-[CICD tutorial](https://www.digitalocean.com/community/tutorials/how-to-automate-deployments-to-digitalocean-kubernetes-with-circleci)
+Some useful links:
 
-There is some manual deployment necessary. Follow [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nginx-ingress-with-cert-manager-on-digitalocean-kubernetes#step-2-%E2%80%94-setting-up-the-kubernetes-nginx-ingress-controller) for running on DigitalOcean.
+* [CICD tutorial](https://www.digitalocean.com/community/tutorials/how-to-automate-deployments-to-digitalocean-kubernetes-with-circleci)
+* To set up the ingress: [ingress tutorial](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nginx-ingress-with-cert-manager-on-digitalocean-kubernetes#step-2-%E2%80%94-setting-up-the-kubernetes-nginx-ingress-controller)

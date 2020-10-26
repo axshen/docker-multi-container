@@ -2,6 +2,7 @@ language: generic
 sudo: required
 services:
   - docker
+if: 
 
 before_install:
   - docker build -t astroaustin/multi-server server
@@ -23,3 +24,5 @@ install:
 after_success:
   - kubectl apply -f k8s/deployments/database-persistent-volume-claim.yaml
   - kubectl apply -f k8s/deployments
+
+# create ingress manually after
