@@ -21,4 +21,5 @@ install:
   - cat ${HOME}/.kube/config
 
 after_success:
+  - kubectl apply -f k8s/database-persistent-volume-claim.yaml
   - kubectl apply -f k8s
