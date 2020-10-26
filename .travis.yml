@@ -3,22 +3,22 @@ sudo: required
 services:
   - docker
 
-# before_install:
-#   - docker build -t astroaustin/multi-server server
-#   - docker build -t astroaustin/multi-client client
-#   - docker build -t astroaustin/multi-worker worker
-#   - docker login -u $DOCKER_ID -p $DOCKER_PASSWORD
-#   - docker push astroaustin/multi-server
-#   - docker push astroaustin/multi-client
-#   - docker push astroaustin/multi-worker
+before_install:
+  - docker build -t astroaustin/multi-server server
+  - docker build -t astroaustin/multi-client client
+  - docker build -t astroaustin/multi-worker worker
+  - docker login -u $DOCKER_ID -p $DOCKER_PASSWORD
+  - docker push astroaustin/multi-server
+  - docker push astroaustin/multi-client
+  - docker push astroaustin/multi-worker
 
 install:
   - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
   - chmod +x ./kubectl
   - sudo mv ./kubectl /usr/local/bin/kubectl
   - mkdir ${HOME}/.kube
-  - envsubst < k8s/config > ${HOME}/.kube/config
+  - envsubst < cicd_k8s/config > ${HOME}/.kube/config
   - cat ${HOME}/.kube/config
 
-script:
-  - kubectl get pods
+after_success:
+  - kubectl apply -f k8s
