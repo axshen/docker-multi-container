@@ -20,5 +20,4 @@ install:
   - echo "$KUBE_CONFIG" > ${HOME}/.kube/config
 
 script:
-  - cat ${HOME}/.kube/config
   - kubectl get pods
