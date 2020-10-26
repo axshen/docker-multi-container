@@ -17,7 +17,7 @@ install:
   - chmod +x ./kubectl
   - sudo mv ./kubectl /usr/local/bin/kubectl
   - mkdir ${HOME}/.kube
-  - echo "$KUBE_CONFIG" | base64 --decode > ${HOME}/.kube/config
+  - echo "$KUBE_CONFIG" > ${HOME}/.kube/config
 
 script:
   - kubectl get pods
