@@ -1,6 +1,8 @@
-# K8s
+# quick-K8s
 
-Deployment of a simple web application to kubernetes.
+Code for a quick deployment of a basic web application using Kubernetes. Uses DigitalOcean for cloud resources and Travis CI for CI/CD. Contains custom client, server and async worker code. 
+
+Also contains a docker-compose file for running locally.
 
 [CICD tutorial](https://www.digitalocean.com/community/tutorials/how-to-automate-deployments-to-digitalocean-kubernetes-with-circleci)
 
