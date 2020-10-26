@@ -17,9 +17,9 @@ install:
   - chmod +x ./kubectl
   - sudo mv ./kubectl /usr/local/bin/kubectl
   - mkdir ${HOME}/.kube
-  - envsubst < cicd_k8s/config > ${HOME}/.kube/config
+  - envsubst < k8s/cicd/config > ${HOME}/.kube/config
   - cat ${HOME}/.kube/config
 
 after_success:
-  - kubectl apply -f k8s/database-persistent-volume-claim.yaml
-  - kubectl apply -f k8s
+  - kubectl apply -f k8s/deployments/database-persistent-volume-claim.yaml
+  - kubectl apply -f k8s/deployments
