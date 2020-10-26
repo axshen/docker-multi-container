@@ -1,0 +1,11 @@
+language: generic
+sudo: required
+services:
+  - docker
+
+script:
+  - docker build -t astroaustin/multi-server server
+
+after_success:
+  - docker login -u $DOCKER_ID -p $DOCKER_PASSWORD
+  - docker push astroaustin/multi-server
