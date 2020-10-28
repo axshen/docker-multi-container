@@ -6,11 +6,11 @@ if:
 
 before_install:
   # - docker build -t astroaustin/multi-server server
-  - docker build -t astroaustin/multi-client client
+  - docker build -t astroaustin/multi-client:v2 client
   # - docker build -t astroaustin/multi-worker worker
   - docker login -u $DOCKER_ID -p $DOCKER_PASSWORD
   # - docker push astroaustin/multi-server
-  - docker push astroaustin/multi-client
+  - docker push astroaustin/multi-client:v2
   # - docker push astroaustin/multi-worker
 
 install:
