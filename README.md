@@ -1,8 +1,6 @@
 # quick-K8s
 
-Code for a quick deployment of a basic web application using Kubernetes. Uses DigitalOcean for cloud resources and Travis CI for CI/CD. Contains custom client, server and async worker code. 
-
-Also contains a docker-compose file for running locally.
+Code for quickly deploying a simple web application with Kubernetes. I am using DigitalOcean for cloud resources. This app is comprised of a frontend, backend and database (all containerised). For local development we include a docker-compose file.
 
 To create a Kubernetes ingress on Digital Ocean:
 
