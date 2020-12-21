@@ -1,6 +1,6 @@
 # quick-K8s
 
-Code for quickly deploying a simple web application with Kubernetes. I am using DigitalOcean for cloud resources. This app is comprised of a frontend, backend and database (all containerised). For local development we include a docker-compose file.
+Useful repository for prototyping and deploying a simple web application. Uses docker-compose for running locally and Kubernetes (on DigitalOcean) for deployment. 
 
 To create a Kubernetes ingress on Digital Ocean:
 
