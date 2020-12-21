@@ -1,22 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: worker-deployment
+  name: api-deployment
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      component: worker
+      component: api
   template:
     metadata:
       labels:
-        component: worker
+        component: api
     spec:
-      containers: 
-        - name: worker
-          image: astroaustin/multi-worker
+      containers:
+        - name: api
+          image: astroaustin/quick-api
+          ports:
+            - containerPort: 5000
           env:
             - name: REDIS_HOST
               value: redis-cluster-ip-service
             - name: REDIS_PORT
               value: "6379"
+      

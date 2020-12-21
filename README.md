@@ -1,6 +1,6 @@
 # quick-K8s
 
-Useful repository for prototyping and deploying a simple web application. Uses docker-compose for running locally and Kubernetes (on DigitalOcean) for deployment. 
+Useful repository for prototyping and deploying a simple web application with Kubernetes. Use Minikube for running locally and DigitalOcean for production deployment. 
 
 To create a Kubernetes ingress on Digital Ocean:
 
